@@ -3,9 +3,10 @@ setuptools>=65.5.0
 wheel
 
 streamlit==1.31.0
-# Pin numpy/pandas to widely supported wheel versions to avoid source builds on the server
-numpy==1.25.3
-pandas==2.1.2
+# Pin numpy/pandas to versions compatible with Python 3.13/3.14 and Streamlit wheels
+numpy==1.26.4
+pandas==2.5.1
+pillow==10.4.0
 plotly==5.18.0
 scikit-learn==1.4.0
 joblib==1.3.2
