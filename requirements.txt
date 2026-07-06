@@ -1,11 +1,11 @@
-pip>=23.0
+# setuptools and wheel help build binary packages; avoid listing pip itself
 setuptools>=65.5.0
 wheel
 
 streamlit==1.31.0
-# Install numpy before pandas to prefer wheels
-numpy==1.26.3
-pandas==2.1.4
+# Pin numpy/pandas to widely supported wheel versions to avoid source builds on the server
+numpy==1.25.3
+pandas==2.1.2
 plotly==5.18.0
 scikit-learn==1.4.0
 joblib==1.3.2
