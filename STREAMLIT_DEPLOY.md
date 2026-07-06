@@ -35,7 +35,7 @@ Pastikan file berikut ada di root repository:
 3. Klik New app
 4. Pilih repository https://github.com/Ws529/Decision-Tree-Algorithm-for-Stroke-Risk-Prediction.git
 5. Pilih branch utama (biasanya main)
-6. Tentukan main file path: app.py
+6. Tentukan main file path: `app.py` (atau `streamlit_app.py` jika Anda memilih wrapper)
 7. Klik Deploy
 
 ## 4. Tunggu proses deploy
