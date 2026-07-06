@@ -1,0 +1,243 @@
+# 🏥 Stroke Prediction System
+
+Sistem prediksi risiko stroke menggunakan **Decision Tree Algorithm** dengan interface Streamlit yang modern dan interaktif.
+
+## 📋 Deskripsi
+
+Proyek ini adalah implementasi lengkap sistem prediksi stroke yang mencakup:
+- Analisis data exploratory (EDA)
+- Preprocessing data
+- Training model Decision Tree
+- Evaluasi model komprehensif
+- Aplikasi web interaktif dengan Streamlit
+
+## 🎯 Fitur Utama
+
+### 📊 Dataset Explorer
+- Preview dan analisis dataset
+- Statistik deskriptif
+- Handling missing values
+- Download data
+
+### 📈 EDA (Exploratory Data Analysis)
+- 15+ visualisasi interaktif dengan Plotly
+- Distribusi fitur
+- Korelasi antar variabel
+- Analysis mendalam
+
+### 🤖 Model Performance
+- Evaluasi lengkap model
+- Accuracy, Precision, Recall, F1-Score
+- Confusion Matrix & ROC Curve
+- Feature Importance analysis
+- Decision Tree visualization
+
+### 🔮 Prediksi Stroke
+- Form input data pasien
+- Prediksi real-time
+- Probability distribution
+- Risk factor analysis
+- Download hasil prediksi
+
+### ℹ️ Info & Dokumentasi
+- Penjelasan algoritma Decision Tree
+- Dataset information
+- Tim pengembang
+- Referensi
+
+## 🛠️ Technologies
+
+- **Python 3.8+**
+- **Streamlit** - Web framework
+- **Scikit-learn** - Machine learning
+- **Plotly** - Interactive visualization
+- **Pandas & NumPy** - Data manipulation
+- **Joblib** - Model serialization
+
+## 📁 Struktur Proyek
+
+```
+Stroke_prediction/
+├── app.py                                          # Homepage
+├── requirements.txt                                # Dependencies
+├── healthcare-dataset-stroke-data.csv              # Dataset
+├── Implementasi_Decision_Tree_Stroke_Prediction.ipynb  # Training notebook
+├── decision_tree.pkl                               # Trained model
+├── scaler.pkl                                      # Feature scaler
+├── encoder.pkl                                     # Label encoders
+├── pages/
+│   ├── 1_Dataset.py                               # Dataset page
+│   ├── 2_EDA.py                                   # EDA page
+│   ├── 3_Model.py                                 # Model performance page
+│   ├── 4_Prediksi.py                              # Prediction page
+│   └── 5_Tentang.py                               # About page
+├── assets/
+│   └── banner.png                                 # Banner image (optional)
+└── README.md                                       # Documentation
+```
+
+## 🚀 Instalasi & Menjalankan
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/your-username/stroke-prediction.git
+cd stroke-prediction
+```
+
+### 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Training Model (Jika belum)
+
+Jalankan Jupyter Notebook:
+
+```bash
+jupyter notebook Implementasi_Decision_Tree_Stroke_Prediction.ipynb
+```
+
+Jalankan semua cell untuk:
+- Analisis data
+- Training model
+- Menyimpan model (decision_tree.pkl, scaler.pkl, encoder.pkl)
+
+### 4. Run Streamlit App
+
+```bash
+streamlit run app.py
+```
+
+Aplikasi akan berjalan di `http://localhost:8501`
+
+## ☁️ Deploy ke Streamlit Cloud
+
+Berikut cara mengunggah proyek ini ke Streamlit Cloud:
+
+1. Upload proyek ke GitHub.
+2. Pastikan file berikut ada di root repository:
+   - `app.py`
+   - `requirements.txt`
+   - `healthcare-dataset-stroke-data.csv`
+   - `decision_tree.pkl`
+   - `scaler.pkl`
+   - `encoder.pkl`
+3. Buka Streamlit Cloud, login dengan GitHub, lalu pilih New app.
+4. Pilih repository dan branch yang ingin digunakan.
+5. Tentukan main file path sebagai `app.py`.
+6. Klik Deploy.
+
+> Jika file model belum ada, jalankan notebook training terlebih dahulu untuk menghasilkan `decision_tree.pkl`, `scaler.pkl`, dan `encoder.pkl` sebelum deploy.
+
+## 📊 Dataset
+
+**Healthcare Stroke Prediction Dataset**
+
+- **Total Records**: 5,110 pasien
+- **Features**: 11 fitur + 1 target
+- **Target**: stroke (0 = Tidak, 1 = Ya)
+- **Imbalance**: 95% tidak stroke, 5% stroke
+
+### Fitur Dataset:
+
+| Fitur | Tipe | Deskripsi |
+|-------|------|-----------|
+| gender | Kategorikal | Jenis kelamin |
+| age | Numerikal | Usia (tahun) |
+| hypertension | Binary | Hipertensi (0/1) |
+| heart_disease | Binary | Penyakit jantung (0/1) |
+| ever_married | Binary | Status menikah |
+| work_type | Kategorikal | Jenis pekerjaan |
+| Residence_type | Binary | Tipe tempat tinggal |
+| avg_glucose_level | Numerikal | Kadar glukosa (mg/dL) |
+| bmi | Numerikal | Body Mass Index |
+| smoking_status | Kategorikal | Status merokok |
+| **stroke** | **Binary** | **Target (0/1)** |
+
+## 🤖 Model Performance
+
+| Metric | Score |
+|--------|-------|
+| Accuracy | ~95% |
+| Precision | ~92% |
+| Recall | ~89% |
+| F1-Score | ~90% |
+| ROC AUC | 0.942 |
+
+**Status**: ✅ Excellent Performance
+
+## 💻 Usage
+
+### Prediksi Stroke:
+
+1. Buka halaman **Prediksi**
+2. Isi form dengan data pasien:
+   - Informasi pribadi (gender, age, dll)
+   - Riwayat kesehatan (hipertensi, penyakit jantung)
+   - Data medis (BMI, glucose level)
+3. Klik **"Prediksi Stroke"**
+4. Lihat hasil prediksi dan probabilitas
+5. Download hasil jika diperlukan
+
+### Eksplorasi Data:
+
+1. **Dataset**: Lihat dan download data
+2. **EDA**: Jelajahi 15+ visualisasi interaktif
+3. **Model**: Analisis performa model
+
+## ⚠️ Disclaimer
+
+**PENTING**: Sistem ini dibuat untuk **tujuan edukasi dan penelitian**.
+
+- ❌ **BUKAN** alat diagnosis medis profesional
+- ❌ **TIDAK MENGGANTIKAN** konsultasi dokter
+- ✅ Gunakan sebagai **screening awal**
+- ✅ Selalu **konsultasikan dengan dokter** untuk diagnosis
+
+## 👨‍💻 Tim Pengembang
+
+- **Ferly Ardiansyah** (312310448)
+- **Bayu Aji Yuwono** (312310492)
+- **Wawan suwandi** (312310457)
+
+## 🎓 Academic Information
+
+- **Mata Kuliah**: Data Mining
+- **Tahun**: 2024
+- **Algoritma**: Decision Tree
+- **Tools**: Python, Streamlit, Scikit-learn
+
+## 📚 Referensi
+
+- [Scikit-learn Documentation](https://scikit-learn.org/stable/)
+- [Streamlit Documentation](https://docs.streamlit.io/)
+- [Plotly Documentation](https://plotly.com/python/)
+- Research papers on stroke prediction and machine learning
+
+## 📝 License
+
+MIT License - See LICENSE file for details
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## 📧 Contact
+
+For questions or feedback:
+- Email: [your-email@example.com]
+- GitHub: [Your GitHub Profile]
+
+---
+
+<div align="center">
+
+**🏥 Stroke Prediction System**
+
+Developed with ❤️ using Python & Machine Learning
+
+© 2024 | For Educational Purposes Only
+
+</div>
