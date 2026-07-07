@@ -116,21 +116,21 @@ model, scaler, encoder = load_model_info()
 # =====================================================================
 # METRICS OVERVIEW
 # =====================================================================
-st.markdown("## Ringkasan Dataset")
+st.markdown("## 📊 Ringkasan Dataset")
 
 if df is not None:
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
         st.metric(
-            label="Total Data",
+            label="📁 Total Data",
             value=f"{len(df):,}",
             delta="5,110 pasien"
         )
     
     with col2:
         st.metric(
-            label="Jumlah Fitur",
+            label="🔢 Jumlah Fitur",
             value="11",
             delta="fitur"
         )
@@ -138,7 +138,7 @@ if df is not None:
     with col3:
         stroke_pct = (df['stroke'].sum() / len(df)) * 100
         st.metric(
-            label="Kasus Stroke",
+            label="⚠️ Kasus Stroke",
             value=f"{df['stroke'].sum()}",
             delta=f"{stroke_pct:.1f}%"
         )
@@ -146,13 +146,13 @@ if df is not None:
     with col4:
         if model is not None:
             st.metric(
-                label="Akurasi Model",
+                label="🤖 Akurasi Model",
                 value="~95%",
                 delta="Decision Tree"
             )
         else:
             st.metric(
-                label="Model",
+                label="🤖 Model",
                 value="Belum Dimuat",
                 delta="Latih model dulu"
             )
@@ -162,13 +162,13 @@ st.markdown("---")
 # =====================================================================
 # QUICK STATS
 # =====================================================================
-st.markdown("## Statistik Cepat")
+st.markdown("## 📈 Statistik Cepat")
 
 if df is not None:
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("### Distribusi Gender")
+        st.markdown("### 👥 Distribusi Gender")
         gender_counts = df['gender'].value_counts()
         fig = px.pie(
             values=gender_counts.values,
@@ -182,7 +182,7 @@ if df is not None:
         st.plotly_chart(fig, use_container_width=True)
     
     with col2:
-        st.markdown("### Distribusi Stroke")
+        st.markdown("### 🎯 Distribusi Stroke")
         stroke_counts = df['stroke'].value_counts()
         fig = px.pie(
             values=stroke_counts.values,
@@ -200,14 +200,14 @@ st.markdown("---")
 # =====================================================================
 # KEY FEATURES
 # =====================================================================
-st.markdown("## Fitur Utama Aplikasi")
+st.markdown("## 🎯 Fitur Utama Aplikasi")
 
 col1, col2, col3 = st.columns(3)
 
 with col1:
     st.markdown("""
     <div class="info-box">
-        <h3>Eksplorasi Dataset</h3>
+        <h3>📊 Eksplorasi Dataset</h3>
         <p>Jelajahi dataset lengkap dengan berbagai filter dan statistik deskriptif.</p>
         <ul>
             <li>Preview data</li>
@@ -220,7 +220,7 @@ with col1:
 with col2:
     st.markdown("""
     <div class="info-box">
-        <h3>EDA Interaktif</h3>
+        <h3>📈 EDA Interaktif</h3>
         <p>Visualisasi data interaktif dengan Plotly untuk analisis mendalam.</p>
         <ul>
             <li>15+ visualisasi</li>
@@ -233,7 +233,7 @@ with col2:
 with col3:
     st.markdown("""
     <div class="info-box">
-        <h3>Performa Model</h3>
+        <h3>🤖 Performa Model</h3>
         <p>Evaluasi model Decision Tree dengan berbagai metrik.</p>
         <ul>
             <li>Accuracy, Precision, Recall</li>
@@ -248,7 +248,7 @@ st.markdown("---")
 # =====================================================================
 # ABOUT STROKE
 # =====================================================================
-st.markdown("## Tentang Stroke")
+st.markdown("## 🏥 Tentang Stroke")
 
 col1, col2 = st.columns([2, 1])
 
@@ -259,7 +259,7 @@ with col1:
     **Stroke** adalah kondisi medis serius yang terjadi ketika aliran darah ke bagian otak terganggu atau berkurang, 
     sehingga mencegah jaringan otak mendapatkan oksigen dan nutrisi. Sel-sel otak mulai mati dalam hitungan menit.
     
-    ### Faktor Risiko Stroke:
+    ### 🔴 Faktor Risiko Stroke:
     
     1. **Usia**: Risiko meningkat seiring bertambahnya usia
     2. **Hipertensi**: Tekanan darah tinggi
@@ -269,7 +269,7 @@ with col1:
     6. **Merokok**: Kebiasaan merokok
     7. **Kolesterol Tinggi**: Kadar kolesterol tidak normal
     
-    ### Pencegahan:
+    ### 💡 Pencegahan:
     
     - Jaga pola makan sehat
     - Olahraga teratur
@@ -280,7 +280,7 @@ with col1:
     """)
 
 with col2:
-    st.markdown("### Statistik Penting")
+    st.markdown("### 📊 Statistik Penting")
     
     if df is not None:
         st.info(f"""
@@ -296,7 +296,7 @@ with col2:
         """)
     
     st.success("""
-    **Deteksi Dini**
+    **🎯 Deteksi Dini**
     
     Sistem ini membantu mendeteksi risiko stroke lebih awal menggunakan machine learning.
     """)

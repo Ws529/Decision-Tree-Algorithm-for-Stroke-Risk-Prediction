@@ -248,7 +248,7 @@ st.markdown("---")
 # =====================================================================
 # ABOUT STROKE
 # =====================================================================
-st.markdown("## Tentang Stroke")
+st.markdown("## 🏥 Tentang Stroke")
 
 col1, col2 = st.columns([2, 1])
 
@@ -259,7 +259,7 @@ with col1:
     **Stroke** adalah kondisi medis serius yang terjadi ketika aliran darah ke bagian otak terganggu atau berkurang, 
     sehingga mencegah jaringan otak mendapatkan oksigen dan nutrisi. Sel-sel otak mulai mati dalam hitungan menit.
     
-    ### Faktor Risiko Stroke:
+    ### 🔴 Faktor Risiko Stroke:
     
     1. **Usia**: Risiko meningkat seiring bertambahnya usia
     2. **Hipertensi**: Tekanan darah tinggi
@@ -269,7 +269,7 @@ with col1:
     6. **Merokok**: Kebiasaan merokok
     7. **Kolesterol Tinggi**: Kadar kolesterol tidak normal
     
-    ### Pencegahan:
+    ### 💡 Pencegahan:
     
     - Jaga pola makan sehat
     - Olahraga teratur
@@ -280,7 +280,7 @@ with col1:
     """)
 
 with col2:
-    st.markdown("### Statistik Penting")
+    st.markdown("### 📊 Statistik Penting")
     
     if df is not None:
         st.info(f"""
@@ -296,7 +296,7 @@ with col2:
         """)
     
     st.success("""
-    **Deteksi Dini**
+    **🎯 Deteksi Dini**
     
     Sistem ini membantu mendeteksi risiko stroke lebih awal menggunakan machine learning.
     """)
