@@ -1,0 +1,11 @@
+setuptools>=65.5.0
+wheel
+streamlit
+numpy
+pandas
+pillow
+plotly
+scikit-learn
+joblib
+matplotlib
+seaborn

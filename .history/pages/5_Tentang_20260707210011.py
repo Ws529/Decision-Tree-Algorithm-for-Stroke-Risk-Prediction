@@ -684,68 +684,21 @@ with col2:
 st.markdown("---")
 
 # =====================================================================
-# SYSTEM OUTPUT EXPLANATION
-# =====================================================================
-st.markdown("## Kesimpulan Sistem Prediksi")
-
-st.markdown("""
-### Apa yang Dihasilkan oleh Sistem Prediksi Stroke?
-
-Sistem prediksi stroke menggunakan Decision Tree ini menghasilkan beberapa output penting:
-
-#### 1. **Prediksi Risiko Stroke**
-Sistem akan mengklasifikasikan pasien ke dalam dua kategori:
-- **Risiko Rendah (No Stroke)**: Pasien diprediksi tidak memiliki risiko stroke
-- **Risiko Tinggi (Stroke)**: Pasien diprediksi memiliki risiko stroke
-
-#### 2. **Probabilitas Prediksi**
-Sistem memberikan nilai probabilitas untuk setiap kelas:
-- **Probabilitas Tidak Stroke**: Persentase keyakinan model bahwa pasien tidak berisiko (0-100%)
-- **Probabilitas Stroke**: Persentase keyakinan model bahwa pasien berisiko (0-100%)
-
-#### 3. **Analisis Faktor Risiko**
-Sistem mengidentifikasi faktor-faktor risiko yang terdeteksi pada pasien:
-- Usia di atas 45/60 tahun
-- Riwayat hipertensi
-- Riwayat penyakit jantung
-- Kadar glukosa tinggi
-- BMI tinggi (overweight/obesitas)
-- Status merokok
-
-#### 4. **Rekomendasi Kesehatan**
-Berdasarkan hasil prediksi, sistem memberikan rekomendasi:
-- **Risiko Rendah**: Saran untuk mempertahankan gaya hidup sehat
-- **Risiko Tinggi**: Anjuran untuk segera berkonsultasi dengan dokter
-
-#### 5. **Visualisasi Hasil**
-Sistem menyajikan hasil dalam bentuk:
-- Grafik batang probabilitas
-- Kotak hasil prediksi dengan kode warna (hijau/merah)
-- Daftar faktor risiko yang teridentifikasi
-- File CSV yang dapat diunduh untuk dokumentasi
-
-### Akurasi dan Keandalan
-
-Model Decision Tree yang digunakan memiliki:
-- **Akurasi**: ~95%
-- **AUC Score**: 0.942
-
-Namun perlu diingat bahwa hasil prediksi ini hanya merupakan **alat bantu skrining awal** dan 
-**bukan pengganti diagnosis medis profesional**. Selalu konsultasikan dengan dokter untuk 
-pemeriksaan dan diagnosis yang akurat.
-""")
-
-st.markdown("---")
-
-# =====================================================================
 # FOOTER
 # =====================================================================
+st.markdown("---")
 st.markdown("""
-<div style='text-align: center; color: #666; padding: 20px;'>
-    <p><strong>Stroke Prediction System</strong></p>
+<div style='text-align: center; color: #666; padding: 30px;'>
+    <h3>Stroke Prediction System</h3>
+    <p><strong>Powered by Decision Tree Algorithm</strong></p>
     <p>Data Mining Project | 2024</p>
-    <p style='margin-top: 10px; font-size: 0.9rem;'>
-        Ferly Ardiansyah, Bayu Aji Yuwono, Wawan suwandi
+    <p>Developed using Python, Streamlit & Machine Learning</p>
+    <br>
+    <p style='font-size: 0.9rem;'>
+        2024 Ferly Ardiansyah, Bayu Aji Yuwono, Wawan suwandi
+    </p>
+    <p style='font-size: 0.8rem; color: #999;'>
+        For educational purposes only | Not for medical diagnosis
     </p>
 </div>
 """, unsafe_allow_html=True)
