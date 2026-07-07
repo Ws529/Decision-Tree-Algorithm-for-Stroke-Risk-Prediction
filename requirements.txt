@@ -1,13 +1,11 @@
-# setuptools and wheel help build binary packages; avoid listing pip itself
 setuptools>=65.5.0
 wheel
-
-streamlit==1.39.0
-numpy==1.26.4
-pandas==2.2.3
-pillow==10.4.0
-plotly==5.24.1
-scikit-learn==1.4.2
-joblib==1.3.2
-matplotlib==3.8.4
-seaborn==0.13.2
+streamlit
+numpy
+pandas
+pillow
+plotly
+scikit-learn
+joblib
+matplotlib
+seaborn
