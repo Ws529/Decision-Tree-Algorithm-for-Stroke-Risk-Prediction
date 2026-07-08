@@ -72,7 +72,7 @@ with st.sidebar:
     st.markdown("""
     - Ferly Ardiansyah
     - Bayu Aji Yuwono
-    - Wawan suwandi
+    - Wawan Suwandi
     """)
     
     st.markdown("---")
@@ -334,29 +334,72 @@ if model is not None and scaler is not None and encoder is not None:
         
         with col1:
             st.markdown("**Informasi Pribadi**")
-            gender = st.selectbox("Jenis Kelamin", options=["Male", "Female", "Other"])
-            age = st.number_input("Usia (tahun)", min_value=0, max_value=120, value=45, step=1)
-            ever_married = st.selectbox("Status Pernikahan", options=["Yes", "No"])
-            work_type = st.selectbox("Jenis Pekerjaan", 
-                                     options=["Private", "Self-employed", "Govt_job", "children", "Never_worked"])
-            residence_type = st.selectbox("Tipe Tempat Tinggal", options=["Urban", "Rural"])
+            gender_display = st.selectbox("Jenis Kelamin", 
+                                         options=["Laki-laki", "Perempuan", "Lainnya"])
+            # Mapping ke nilai asli untuk model
+            gender_map = {"Laki-laki": "Male", "Perempuan": "Female", "Lainnya": "Other"}
+            gender = gender_map[gender_display]
+            
+            age = st.number_input("Usia (tahun)", min_value=0, max_value=120, value=44, step=1)
+            st.caption("💡 Masukkan usia dalam tahun (contoh: 44)")
+            
+            married_display = st.selectbox("Status Pernikahan", options=["Ya", "Tidak"])
+            ever_married = "Yes" if married_display == "Ya" else "No"
+            
+            work_display = st.selectbox("Jenis Pekerjaan", 
+                                       options=["Swasta (Private)", 
+                                               "Wiraswasta (Self-employed)", 
+                                               "PNS/ASN (Govt_job)", 
+                                               "Anak-anak (children)", 
+                                               "Tidak Pernah Bekerja (Never_worked)"])
+            work_map = {
+                "Swasta (Private)": "Private",
+                "Wiraswasta (Self-employed)": "Self-employed",
+                "PNS/ASN (Govt_job)": "Govt_job",
+                "Anak-anak (children)": "children",
+                "Tidak Pernah Bekerja (Never_worked)": "Never_worked"
+            }
+            work_type = work_map[work_display]
+            st.caption("💡 Pilih jenis pekerjaan yang sesuai")
+            
+            residence_display = st.selectbox("Tipe Tempat Tinggal", 
+                                            options=["Perkotaan (Urban)", "Pedesaan (Rural)"])
+            residence_type = "Urban" if residence_display == "Perkotaan (Urban)" else "Rural"
         
         with col2:
             st.markdown("**Riwayat Kesehatan**")
-            hypertension = st.selectbox("Hipertensi", options=[0, 1], 
-                                        format_func=lambda x: "Ya" if x == 1 else "Tidak")
-            heart_disease = st.selectbox("Penyakit Jantung", options=[0, 1], 
-                                         format_func=lambda x: "Ya" if x == 1 else "Tidak")
-            smoking_status = st.selectbox("Status Merokok", 
-                                          options=["never smoked", "formerly smoked", "smokes", "Unknown"])
+            hypertension_display = st.selectbox("Hipertensi", options=["Tidak", "Ya"])
+            st.caption("💡 Hipertensi = Tekanan darah tinggi (≥140/90 mmHg)")
+            hypertension = 1 if hypertension_display == "Ya" else 0
+            
+            heart_display = st.selectbox("Penyakit Jantung", options=["Tidak", "Ya"])
+            st.caption("💡 Riwayat penyakit jantung seperti serangan jantung, gagal jantung, dll.")
+            heart_disease = 1 if heart_display == "Ya" else 0
+            
+            smoking_display = st.selectbox("Status Merokok", 
+                                          options=["Tidak Pernah Merokok", 
+                                                  "Pernah Merokok (Sudah Berhenti)", 
+                                                  "Merokok", 
+                                                  "Tidak Diketahui"])
+            smoking_map = {
+                "Tidak Pernah Merokok": "never smoked",
+                "Pernah Merokok (Sudah Berhenti)": "formerly smoked",
+                "Merokok": "smokes",
+                "Tidak Diketahui": "Unknown"
+            }
+            smoking_status = smoking_map[smoking_display]
+            st.caption("💡 Status kebiasaan merokok saat ini atau di masa lalu")
         
         with col3:
             st.markdown("**Data Medis**")
             avg_glucose_level = st.number_input("Kadar Glukosa Rata-rata (mg/dL)", 
                                                min_value=50.0, max_value=300.0, value=106.0, step=0.1)
+            st.caption("💡 Kadar gula darah rata-rata. Normal: <100 mg/dL (puasa)")
+            
             bmi = st.number_input("BMI (Body Mass Index)", 
                                  min_value=10.0, max_value=100.0, value=28.0, step=0.1)
-            st.caption("Referensi BMI: Kurus <18.5 | Normal 18.5-24.9 | Gemuk 25-29.9 | Obesitas ≥30")
+            st.caption("💡 Indeks Massa Tubuh. Rumus: Berat(kg) ÷ [Tinggi(m)]²")
+            st.caption("📊 Kurus <18.5 | Normal 18.5-24.9 | Gemuk 25-29.9 | Obesitas ≥30")
         
         st.markdown("---")
         col1, col2, col3 = st.columns([1, 1, 1])
