@@ -10,7 +10,7 @@ from plotly.subplots import make_subplots
 # =====================================================================
 st.set_page_config(
     page_title="EDA - Stroke Prediction",
-    page_icon="📈",
+    page_icon="📊",
     layout="wide"
 )
 

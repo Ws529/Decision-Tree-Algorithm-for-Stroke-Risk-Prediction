@@ -11,7 +11,7 @@ import os
 # =====================================================================
 st.set_page_config(
     page_title="Stroke Prediction App",
-    page_icon="🏥",
+    page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"
 )

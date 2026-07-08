@@ -15,7 +15,7 @@ import os
 # ==================== CONFIG ====================
 st.set_page_config(
     page_title="Model - Stroke Prediction",
-    page_icon="🤖",
+    page_icon="📊",
     layout="wide"
 )
 
