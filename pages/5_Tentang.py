@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Tentang - Prediksi Stroke",
-    page_icon="ℹ",
+    page_icon="",
     layout="wide"
 )
 
@@ -355,7 +355,7 @@ with col2:
     
     **MIT License**
     
-    Copyright (c) 2024
+    Copyright (c) 2026
     
     Izin diberikan untuk menggunakan, menyalin, memodifikasi, dan mendistribusikan software ini untuk tujuan edukasi.
     
@@ -374,7 +374,7 @@ st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #666; padding: 20px;'>
     <p><strong>Sistem Prediksi Stroke</strong></p>
-    <p>Proyek Data Mining | 2024</p>
+    <p>Proyek Data Mining | 2026</p>
     <p style='margin-top: 10px;'>
         Ferly Ardiansyah, Bayu Aji Yuwono, Wawan suwandi
     </p>

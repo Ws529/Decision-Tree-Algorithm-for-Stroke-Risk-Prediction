@@ -11,7 +11,7 @@ import os
 # =====================================================================
 st.set_page_config(
     page_title="Aplikasi Prediksi Stroke",
-    page_icon="🩺",
+    page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -341,7 +341,7 @@ if model is not None and scaler is not None and encoder is not None:
             gender = gender_map[gender_display]
             
             age = st.number_input("Usia (tahun)", min_value=0, max_value=120, value=44, step=1)
-            st.caption("💡 Masukkan usia dalam tahun (contoh: 44)")
+            st.caption("Masukkan usia dalam tahun (contoh: 44)")
             
             married_display = st.selectbox("Status Pernikahan", options=["Ya", "Tidak"])
             ever_married = "Yes" if married_display == "Ya" else "No"
@@ -360,7 +360,7 @@ if model is not None and scaler is not None and encoder is not None:
                 "Tidak Pernah Bekerja (Never_worked)": "Never_worked"
             }
             work_type = work_map[work_display]
-            st.caption("💡 Pilih jenis pekerjaan yang sesuai")
+            st.caption("Pilih jenis pekerjaan yang sesuai")
             
             residence_display = st.selectbox("Tipe Tempat Tinggal", 
                                             options=["Perkotaan (Urban)", "Pedesaan (Rural)"])
@@ -369,11 +369,11 @@ if model is not None and scaler is not None and encoder is not None:
         with col2:
             st.markdown("**Riwayat Kesehatan**")
             hypertension_display = st.selectbox("Hipertensi", options=["Tidak", "Ya"])
-            st.caption("💡 Hipertensi = Tekanan darah tinggi (≥140/90 mmHg)")
+            st.caption("Hipertensi = Tekanan darah tinggi (≥140/90 mmHg)")
             hypertension = 1 if hypertension_display == "Ya" else 0
             
             heart_display = st.selectbox("Penyakit Jantung", options=["Tidak", "Ya"])
-            st.caption("💡 Riwayat penyakit jantung seperti serangan jantung, gagal jantung, dll.")
+            st.caption("Riwayat penyakit jantung seperti serangan jantung, gagal jantung, dll.")
             heart_disease = 1 if heart_display == "Ya" else 0
             
             smoking_display = st.selectbox("Status Merokok", 
@@ -388,18 +388,18 @@ if model is not None and scaler is not None and encoder is not None:
                 "Tidak Diketahui": "Unknown"
             }
             smoking_status = smoking_map[smoking_display]
-            st.caption("💡 Status kebiasaan merokok saat ini atau di masa lalu")
+            st.caption("Status kebiasaan merokok saat ini atau di masa lalu")
         
         with col3:
             st.markdown("**Data Medis**")
             avg_glucose_level = st.number_input("Kadar Glukosa Rata-rata (mg/dL)", 
                                                min_value=50.0, max_value=300.0, value=106.0, step=0.1)
-            st.caption("💡 Kadar gula darah rata-rata. Normal: <100 mg/dL (puasa)")
+            st.caption("Kadar gula darah rata-rata. Normal: <100 mg/dL (puasa)")
             
             bmi = st.number_input("BMI (Body Mass Index)", 
                                  min_value=10.0, max_value=100.0, value=28.0, step=0.1)
-            st.caption("💡 Indeks Massa Tubuh. Rumus: Berat(kg) ÷ [Tinggi(m)]²")
-            st.caption("📊 Kurus <18.5 | Normal 18.5-24.9 | Gemuk 25-29.9 | Obesitas ≥30")
+            st.caption("Indeks Massa Tubuh. Rumus: Berat(kg) ÷ [Tinggi(m)]²")
+            st.caption("Kurus <18.5 | Normal 18.5-24.9 | Gemuk 25-29.9 | Obesitas ≥30")
         
         st.markdown("---")
         col1, col2, col3 = st.columns([1, 1, 1])
@@ -655,7 +655,7 @@ st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #666; padding: 20px;'>
     <p><strong>Sistem Prediksi Stroke</strong></p>
-    <p>Proyek Data Mining | 2024</p>
+    <p>Proyek Data Mining | 2026</p>
     <p>Dikembangkan dengan menggunakan Streamlit & Python</p>
 </div>
 """, unsafe_allow_html=True)
